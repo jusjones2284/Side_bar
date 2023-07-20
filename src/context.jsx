@@ -9,5 +9,34 @@ export const AppProvider = ({ children }) =>{
   const openSidebar =()=>{
     setIsSidebarOpen(true);
   };
-  return <AppContext.Provider>{children} </AppContext.Provider>
+
+  const closeSidebar = ()=>{
+    setIsSidebarOpen(false);
+  };
+
+  const openModal = ()=>{
+    setIsModalOpen(true);
+  };
+
+  const closeModal = ()=>{
+    setIsModalOpen(false);
+  }
+
+
+  return <AppContext.Provider 
+            value={{
+              isSidebarOpen, 
+              isModalOpen, 
+              openSidebar, 
+              closeSidebar, 
+              openModal, 
+              closeModal}}>
+                {children} 
+                </AppContext.Provider>
+  };
+
+export const useGlobalContext =()=>{
+
+  return useContext(AppContext)
+
 }
