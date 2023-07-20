@@ -2,12 +2,20 @@ import Home from "./Home";
 import Modal from "./Modal";
 import Sidebar from "./Sidebar";
 
+import React from 'react'
+
 const App = () => {
-<>
-            <Home />
-            <Modal />
-            <Sidebar />
-            
-</>;
-};
-export default App;
+  return (
+    <>
+      
+      <Modal />
+      <Sidebar /> 
+      <Home />
+   
+
+      
+    </>
+  )
+}
+
+export default App
